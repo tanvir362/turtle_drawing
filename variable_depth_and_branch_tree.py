@@ -1,5 +1,5 @@
 import turtle as tl
-length = 30
+length = 90
 depth = int(input('Enter depth of the tree: '))
 nob = int(input('Enter number of branch: '))
 
@@ -23,7 +23,7 @@ def signature():
 	tl.write("~Tanvir Ahmed", font=("Arial", 9, "normal"))
 	tl.up()
 
-def create_branches(n):
+def create_branches(n, length):
 
     if n == 0 :
         return
@@ -36,7 +36,7 @@ def create_branches(n):
         tl.right(ang)
         tl.pendown()
         tl.forward(length)
-        create_branches(n-1)
+        create_branches(n-1, length/1.5)
         tl.penup()
         tl.backward(length)
     
@@ -53,7 +53,7 @@ tl.left(90)
 
 tl.pendown()
 tl.forward(50)
-create_branches(depth)
+create_branches(depth, length)
 tl.speed(1)
 tl.hideturtle()
 
